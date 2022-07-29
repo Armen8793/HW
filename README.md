@@ -10,10 +10,16 @@ Sign in AWS
 then
 
 $ aws configure
+
 AWS Access Key ID [****************D55M]: **************************************
+
 AWS Secret Access Key [****************A+Mg]: **********************************
+
 Default region name [us-east-1]: ***********
+
 Default output format [json]: **************
+
+
 
 install Ansible:
 
