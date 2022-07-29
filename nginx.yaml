@@ -1,12 +1,12 @@
 ---
 - hosts: all
-  become: yes
+  become: true
   vars:
     server_name: "{{ ansible_default_ipv4.address }}"
     document_root: /var/www
     app_root: html_demo_site-main
   tasks:
-    - name: Update apt cache and install Nginx
+    - name: Install Nginx
       apt:
         name: nginx
         state: latest
@@ -20,18 +20,18 @@
 
     - name: Apply Nginx template
       template:
-        src: files/nginx.conf.j2
+        src:  ./nginx.conf
         dest: /etc/nginx/sites-available/default
       notify: Restart Nginx
 
-    - name: Enable new site
+    - name: Site enable
       file:
         src: /etc/nginx/sites-available/default
         dest: /etc/nginx/sites-enabled/default
         state: link
       notify: Restart Nginx
 
-    - name: Allow all access to tcp port 80
+    - name: Allow port 80
       ufw:
         rule: allow
         port: '80'
