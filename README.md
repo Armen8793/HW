@@ -1,4 +1,4 @@
-This is my July 23 Homework
+This is my July 27 Homework
 
 It's a simple terraform script to create a simple EC2 instance generated with Ansible, which will install nginx on that EC2 and run a simple html file
 
