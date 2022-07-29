@@ -34,5 +34,14 @@ $ wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /us
 $ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 $ sudo apt update && sudo apt install terraform
 
+ 
+After u finished scripting, just type:
 
+Terraform init 
+
+Terraform plan
+
+Terraform apply --auto-aproove
+
+Don't forget to type "Terraform destroy" in the end, when u finish)))
 
